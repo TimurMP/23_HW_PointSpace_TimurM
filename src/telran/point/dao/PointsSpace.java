@@ -8,24 +8,17 @@ import java.util.Comparator;
 public class PointsSpace {
     Point relPoint;
     Point[] points;
-    Comparator<Point> comp = (p2, p1) -> {
+    Comparator<Point> comp = (p1, p2) -> {
 
         double distanceXP1 = ((p1.getX()- relPoint.getX()));
         double distanceYP1 = ((p1.getY()- relPoint.getY()));
         double distanceP1 = Math.sqrt(distanceXP1*distanceXP1)+(distanceYP1*distanceYP1);
-        System.out.println("xxxx1  " + p1.getX());
-        System.out.println("xxxx2  " + p2.getX());
-
-        System.out.println("distanceP1  " + distanceP1);
 
         double distanceXP2 = ((p2.getX()- relPoint.getX()));
         double distanceYP2 = ((p2.getY())-relPoint.getY());
         double distanceP2 = Math.sqrt(distanceXP2*distanceXP2)+(distanceYP2*distanceYP2);
-        System.out.println("distanceP2  " + distanceP2);
-//        double relativeDistance = Double.compare(distanceP1, distanceP2);
 
-
-        return Double.compare(distanceP2, distanceP1);
+        return Double.compare(distanceP1, distanceP2);
     };
 
 
