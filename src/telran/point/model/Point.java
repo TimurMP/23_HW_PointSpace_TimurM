@@ -1,7 +1,5 @@
 package telran.point.model;
 
-import java.util.Objects;
-
 public class Point {
     double x;
     double y;
@@ -28,15 +26,40 @@ public class Point {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Point)) return false;
-        Point point = (Point) o;
-        return Double.compare(point.x, x) == 0 && Double.compare(point.y, y) == 0;
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        long temp;
+        temp = Double.doubleToLongBits(x);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(y);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Point)) {
+            return false;
+        }
+        Point other = (Point) obj;
+        if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
