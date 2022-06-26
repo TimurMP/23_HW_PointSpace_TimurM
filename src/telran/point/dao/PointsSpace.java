@@ -22,19 +22,10 @@ public class PointsSpace {
         double distanceYP2 = ((p2.getY())-relPoint.getY());
         double distanceP2 = Math.sqrt(distanceXP2*distanceXP2)+(distanceYP2*distanceYP2);
         System.out.println("distanceP2  " + distanceP2);
-
 //        double relativeDistance = Double.compare(distanceP1, distanceP2);
-        if (distanceP1>distanceP2){
 
-            return  -1;
-        }
 
-//        if (distanceP1<distanceP2){
-//
-//            return  1;
-//        }
-
-        return 0;
+        return Double.compare(distanceP2, distanceP1);
     };
 
 
@@ -42,8 +33,8 @@ public class PointsSpace {
     public PointsSpace(Point relPoint, Point[] points) {
         this.relPoint = relPoint;
         Point[] copyPoints = Arrays.copyOf(points, points.length);
-        Arrays.sort(copyPoints, comp);
-        this.points = copyPoints;
+        Arrays.sort(points, comp);
+        this.points = points;
 
         //FIXME Fix problem
         //TODO sorting this.point by proximity to relPoint
