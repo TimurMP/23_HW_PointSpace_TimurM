@@ -45,11 +45,11 @@ public class PointsSpace {
         System.out.println(index);
         Point[] pointCopy = new Point[points.length + 1];
         if (index < 0) {
-            System.arraycopy(points, -index - 1, pointCopy, -index, points.length + index + 1);
-            System.arraycopy(points, index - index, pointCopy, index - index, index - index + 1);
+            System.arraycopy(points, 0, pointCopy, 0, (-index - 1));
+            System.arraycopy(points, (-index - 1), pointCopy, (-index - 1) + 1, points.length - (-index - 1));
             pointCopy[-index - 1] = point;
         }
-        if (index > 0) {
+        if (index > 0 || index == 0) {
             System.arraycopy(points, index, pointCopy, index + 1, points.length - index);
             System.arraycopy(points, index - index, pointCopy, index - index, index);
             pointCopy[index] = point;

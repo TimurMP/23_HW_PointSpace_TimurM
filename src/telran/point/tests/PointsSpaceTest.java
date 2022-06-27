@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 import telran.point.dao.PointsSpace;
 import telran.point.model.Point;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class PointsSpaceTest {
@@ -46,30 +43,11 @@ class PointsSpaceTest {
         assertArrayEquals(expected01_02, ps.getPoints());
     }
 
+
     @Test
     void temp() {
-
-
-        Point relPoint = p4;
-        Comparator<Point> comp = (p1, p2) -> {
-
-            double distanceXP1 = ((p1.getX() - relPoint.getX()));
-            double distanceYP1 = ((p1.getY() - relPoint.getY()));
-            double distanceP1 = Math.sqrt(distanceXP1 * distanceXP1) + (distanceYP1 * distanceYP1);
-
-            double distanceXP2 = ((p2.getX() - relPoint.getX()));
-            double distanceYP2 = ((p2.getY()) - relPoint.getY());
-            double distanceP2 = Math.sqrt(distanceXP2 * distanceXP2) + (distanceYP2 * distanceYP2);
-
-            return Double.compare(distanceP1, distanceP2);
-        };
-
-
-        Point[] original = {p3, p2, p0, p4};
-        printArray(original, "Original");
-        Point[] copy = Arrays.copyOf(original, original.length);
-        Arrays.sort(copy, comp);
-        printArray(copy, "copy");
+        int insPoint = -2;
+        System.out.println((-insPoint - 1) + 1);
     }
 
 
