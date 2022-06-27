@@ -15,6 +15,8 @@ class PointsSpaceTest {
     Point p2 = new Point(2, 2);
     Point p3 = new Point(3, 3);
     Point p4 = new Point(4, 4);
+    Point p5 = new Point(5, 5);
+    Point p6 = new Point(6, 6);
     Point p_2 = new Point(-2, -2);
     Point[] expectedTemp = { p_2, p1, p2, p3, p4 };
     Point[] original = { p3, p2, p0, p4 };
@@ -31,7 +33,7 @@ class PointsSpaceTest {
         PointsSpace ps = new PointsSpace(p0, original);
         ps.printArray();
         assertArrayEquals(expected0, ps.getPoints());
-        new PointsSpace(p4, original);
+        ps = new PointsSpace(p4, original);
         ps.printArray();
         assertArrayEquals(expected4, ps.getPoints());
     }
