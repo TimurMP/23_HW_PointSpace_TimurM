@@ -25,13 +25,7 @@ public class PointsSpace {
     public PointsSpace(Point relPoint, Point[] points) {
         this.relPoint = relPoint;
         Arrays.sort(points, comp);
-        Point[] copyPoints = Arrays.copyOf(points, points.length);
-        this.points = copyPoints;
-
-
-        //FIXME Fix problem
-        //TODO sorting this.point by proximity to relPoint
-        //to apply method sort of class Arrays
+        this.points = Arrays.copyOf(points, points.length);
     }
 
 
@@ -59,12 +53,6 @@ public class PointsSpace {
         for (int i = 0; i < pointCopy.length; i++) {
             System.out.println(pointCopy[i]);
         }
-
-
-        //TODO
-        //Maintain sorting state (Without re-sorting again). Apply binarySearch from Arrays.
-        //to apply method arrayCopy from System.
-        //method arrayCopy will be called twice.
     }
 
 

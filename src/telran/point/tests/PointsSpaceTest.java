@@ -67,5 +67,4 @@ class PointsSpaceTest {
         }
         System.out.println("\n");
     }
-
 }
