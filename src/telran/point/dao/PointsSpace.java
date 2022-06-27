@@ -25,9 +25,10 @@ public class PointsSpace {
 
     public PointsSpace(Point relPoint, Point[] points) {
         this.relPoint = relPoint;
-        Point[] copyPoints = Arrays.copyOf(points, points.length);
         Arrays.sort(points, comp);
-        this.points = points;
+        Point[] copyPoints = Arrays.copyOf(points, points.length);
+        this.points = copyPoints;
+
 
         //FIXME Fix problem
         //TODO sorting this.point by proximity to relPoint
